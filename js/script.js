@@ -57,6 +57,12 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            newTaskText: '',
+            newTask: {
+                text: '',
+                done: false
+            },
+
             todos: [
                 {
                     text: 'Wash the dishes',
@@ -91,6 +97,18 @@ const app = new Vue(
                 }
                 this.todos = utilityArray;
             },
+
+            addTask() {
+                const newTaskAdded = this.newTaskText.trim();
+                this.newTaskText = '';
+
+                if (newTaskAdded.length > 0) {
+                    this.newTask.text = newTaskAdded;
+                    this.todos.push(this.newTask)
+                } else {
+                    console.log('That is an empty task, so nothing to be done! :)');
+                }
+            }
         }
     }
 )
