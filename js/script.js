@@ -28,6 +28,7 @@ il todo alla lista
  todo corrispondente (se done era uguale a false, impostare true e viceversa)
 */
 
+/*
 const todos = [
     {
         text: 'Wash the dishes',
@@ -43,23 +44,53 @@ const todos = [
     },
     {
         text: 'Take the dog for a walk',
-        done: false
+        done: true
     },
     {
         text: 'Do the Boolean exercise',
         done: false
     }
 ]
+*/
 
 const app = new Vue(
     {
         el: '#root',
         data: {
-            todos,
+            todos: [
+                {
+                    text: 'Wash the dishes',
+                    done: true
+                },
+                {
+                    text: 'Go shopping',
+                    done: false
+                },
+                {
+                    text: 'Do the laundry',
+                    done: false
+                },
+                {
+                    text: 'Take the dog for a walk',
+                    done: true
+                },
+                {
+                    text: 'Do the Boolean exercise',
+                    done: false
+                }
+            ]
         },
 
-        method: {
-
+        methods: {
+            deleteTask(index) {
+                const utilityArray = [];
+                for (let i = 0; i < this.todos.length; i++) {
+                    if (i !== index) {
+                        utilityArray.push(this.todos[i]);
+                    }
+                }
+                this.todos = utilityArray;
+            },
         }
     }
 )

@@ -22,10 +22,12 @@
         </div>
 
         <div class="container vs-todolist-container">
-            <h2>To Be Done</h2>
+            <h2>Tasks:</h2>
             <ul>
-                <li v-for="(item, index) in todos" :class="{ 'vs-completed': todos[index].done == true }">
-                    <span>{{ index + 1 }}</span><span>{{ item.text}}</span>
+                <li v-for="(item, index) in todos">
+                    <span>{{ index + 1 }}</span><span class="ms-2"
+                        :class="{ 'vs-crossedtext': todos[index].done == true }">{{ item.text}}</span>
+                    <span class="ms-5" @click="deleteTask(index)">&cross;</span>
                 </li>
             </ul>
         </div>
