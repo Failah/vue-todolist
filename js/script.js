@@ -58,10 +58,6 @@ const app = new Vue(
         el: '#root',
         data: {
             newTaskText: '',
-            newTask: {
-                text: '',
-                done: false
-            },
 
             todos: [
                 {
@@ -101,17 +97,24 @@ const app = new Vue(
             addTask() {
                 let newTaskAdded = this.newTaskText.trim();
 
+                let newTask = {
+                    text: '',
+                    done: false
+                };
+
                 if (newTaskAdded.length > 0) {
-                    this.newTask.text = newTaskAdded;
-                    this.todos.push(this.newTask);
-                    this.newTaskText = '';
+                    newTask.text = newTaskAdded;
+                    this.todos.push(newTask);
+                    console.log(this.todos);
                 } else {
                     console.log('That is an empty task, so nothing to be done! :)');
                 }
+
+                this.newTaskText = '';
             },
 
-            switchDone(index) {
-                this.todos[index].done = !this.todos[index].done;
+            switchDone(i) {
+                this.todos[i].done = !this.todos[i].done;
             }
         }
     }
