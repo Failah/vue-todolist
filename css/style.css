@@ -18,7 +18,9 @@ body {
 
 /* contents */
 
-
+.vs-completed {
+    text-decoration: line-through;
+}
 
 
 /* effects */

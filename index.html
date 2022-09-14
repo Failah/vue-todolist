@@ -24,8 +24,8 @@
         <div class="container vs-todolist-container">
             <h2>To Be Done</h2>
             <ul>
-                <li v-for="(item, index) in todos">
-                    <span>{{ index + 1 }}</span><span>{{ item.text }}</span>
+                <li v-for="(item, index) in todos" :class="{ 'vs-completed': todos[index].done == true }">
+                    <span>{{ index + 1 }}</span><span>{{ item.text}}</span>
                 </li>
             </ul>
         </div>
@@ -33,3 +33,5 @@
 </body>
 
 </html>
+
+<!-- <li v-for="(item, index) in todos" :class="todos[index].done == true ? 'vs-completed' : ''"></li> -->
