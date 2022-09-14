@@ -34,10 +34,10 @@
                 <h2 class="mb-3 text-center">Tasks:</h2>
                 <ul class="row vs-no-dots">
                     <li v-for="(item, index) in todos" class="row justify-content-center mt-2">
-                        <span class="col-1">{{ index + 1 }}</span><span class="ms-2 col-3"
+                        <span class="col-1">{{ index + 1 }}</span><span class="ms-2 col-3 vs-pointer-switch"
                             :class="{ 'vs-crossedtext': todos[index].done == true }" @click="switchDone(index)">{{
                             item.text}}</span>
-                        <span class="ms-5 col-3 text-center vs-pointer" @click="deleteTask(index)">&cross;</span>
+                        <span class="ms-5 col-1 text-center vs-pointer-click" @click="deleteTask(index)">&cross;</span>
                     </li>
                 </ul>
             </div>

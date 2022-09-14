@@ -66,7 +66,7 @@ const app = new Vue(
             todos: [
                 {
                     text: 'Wash the dishes',
-                    done: true
+                    done: false
                 },
                 {
                     text: 'Go shopping',
@@ -78,7 +78,7 @@ const app = new Vue(
                 },
                 {
                     text: 'Take the dog for a walk',
-                    done: true
+                    done: false
                 },
                 {
                     text: 'Do the Boolean exercise',
