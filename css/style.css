@@ -25,5 +25,9 @@ body {
     margin: 0 auto;
 }
 
+.vs-pointer {
+    cursor: pointer;
+}
+
 
 /* effects */

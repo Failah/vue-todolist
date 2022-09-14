@@ -108,6 +108,10 @@ const app = new Vue(
                 } else {
                     console.log('That is an empty task, so nothing to be done! :)');
                 }
+            },
+
+            switchDone(index) {
+                this.todos[index].done = !this.todos[index].done;
             }
         }
     }
