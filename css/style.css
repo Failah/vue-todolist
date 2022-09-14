@@ -7,7 +7,17 @@ body {
 
 /* utilities */
 
+.vs-bg-red {
+    background-color: brown;
+}
 
+.vs-bg-bisque {
+    background-color: bisque;
+}
+
+.vs-h-100 {
+    height: 100vh;
+}
 
 
 /* contents */
@@ -27,6 +37,7 @@ body {
 
 .vs-pointer-click {
     cursor: pointer;
+    user-select: none;
 }
 
 .vs-pointer-switch {

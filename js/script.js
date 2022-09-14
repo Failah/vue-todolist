@@ -99,12 +99,12 @@ const app = new Vue(
             },
 
             addTask() {
-                const newTaskAdded = this.newTaskText.trim();
-                this.newTaskText = '';
+                let newTaskAdded = this.newTaskText.trim();
 
                 if (newTaskAdded.length > 0) {
                     this.newTask.text = newTaskAdded;
-                    this.todos.push(this.newTask)
+                    this.todos.push(this.newTask);
+                    this.newTaskText = '';
                 } else {
                     console.log('That is an empty task, so nothing to be done! :)');
                 }
