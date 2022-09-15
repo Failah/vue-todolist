@@ -26,18 +26,20 @@
                     <button class="btn btn-warning" @click="addTask()">Add task</button>
                 </div>
             </div>
-
         </div>
 
         <div class="vs-container row justify-content-center mt-5">
             <div class="container vs-bg-bisque py-4 rounded-4">
                 <h2 class="mb-3 text-center">Tasks:</h2>
+                <h2 class="mb-3 text-center vs-color-red" v-if="todos.length === 0">YOU HAVE NO TASKS!</h2>
                 <ul class="row vs-no-dots">
                     <li v-for="(item, index) in todos" class="row justify-content-center mt-2">
-                        <span class="col-1">{{ index + 1 }}</span><span class="ms-2 col-3 vs-pointer-switch"
+                        <span class="col-1 vs-font-size vs-color-green">{{ index + 1 }}</span><span
+                            class="ms-2 col-3 vs-pointer-switch vs-bg-grey py-2 rounded-4 vs-task-text"
                             :class="{ 'vs-crossedtext': todos[index].done == true }" @click="switchDone(index)">{{
                             item.text}}</span>
-                        <span class="ms-5 col-1 text-center vs-pointer-click" @click="deleteTask(index)">&cross;</span>
+                        <span class="ms-5 col-1 text-center vs-delete-cross vs-pointer-click vs-color-red vs-font-size"
+                            @click="deleteTask(index)">&cross;</span>
                     </li>
                 </ul>
             </div>
@@ -47,5 +49,3 @@
 </body>
 
 </html>
-
-<!-- <li v-for="(item, index) in todos" :class="todos[index].done == true ? 'vs-completed' : ''"></li> -->
